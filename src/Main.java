@@ -32,6 +32,18 @@ public class Main {
         int randomIntSkaicius = randomInt (min, max);
         System.out.println("Atsitiktinis skaicius "+ randomIntSkaicius);
 
+        // 6 uzduotis.
+        //int min =1;
+        //int max =20;
+       // int length=10;
+
+        //int[] RndMas= genRndMas(max-min) + min;
+        //System.out.println("Masyvas yra: ");
+        //for (int skaicius : RndMas) {
+        //    System.out.println(skaicius + " ");
+        //}
+
+
 
 
     }
@@ -72,7 +84,9 @@ public class Main {
 
     }
     // 6 UZDUOTIS. Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą ir jį gražintų. Funkcija priima tris int tipo kintamuosius, min, max ir length reikšmėms nustatyti.
-    public static int [] rndArr (int min, int max, int length)
+    //public static int [] genRndMas (int min, int max, int length);
+
+
 
 
 
