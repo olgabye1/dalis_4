@@ -18,24 +18,26 @@ public class Main {
         // 3 uzduotis.
         int skaicius1 = 2;
         int skaicius2 = 4;
-        int result =  sandauga(number1, number2);
+        int result = sandauga(number1, number2);
         System.out.println(result);
-        System.out.println( sandauga(skaicius1, skaicius2) );
+        System.out.println(sandauga(skaicius1, skaicius2));
 
         // 4 uzduotis.
-        int [] skaiciuMasyvas = {1,2,3,4};
+        int[] skaiciuMasyvas = {1, 2, 3, 4};
         atspausdintiMasyva(skaiciuMasyvas);
 
         // 5 uzduotis.
-        int min=1;
-        int max=10;
-        int randomIntSkaicius = randomInt (min, max);
-        System.out.println("Atsitiktinis skaicius "+ randomIntSkaicius);
+        int min = 1;
+        int max = 10;
+        int randomIntSkaicius = randomInt(min, max);
+        System.out.println("Atsitiktinis skaicius " + randomIntSkaicius);
 
         // 6 uzduotis.
-        //int min =1;
-        //int max =20;
-       // int length=10;
+
+        min= 5;
+        max= 10;
+        int len = 7;
+        int [] rndIntArr= genRndIntArr(5,  10,  7);
 
         //int[] RndMas= genRndMas(max-min) + min;
         //System.out.println("Masyvas yra: ");
@@ -44,10 +46,7 @@ public class Main {
         //}
 
 
-
-
     }
-
 
 
     //1 uzduotis. Sukurkite Funkciją kuri priima du int tipo kintamuosius. Juos susumuoja ir atspausdina.
@@ -56,6 +55,7 @@ public class Main {
         int sum = number1 + number2;
         System.out.println(sum);
     }
+
     // 2 uzduotis. Sukurkite Funkciją kuri vadinasi PISq. Funkcija gražina double tipo reikšmę. Reikšmė yra : 9.8596; Gautą reikšmę atspausdinkite.
     public static double PISq() {
         return 9.8596;
@@ -68,9 +68,10 @@ public class Main {
         return rezultatas;
 
     }
+
     // 4 UZDUOTIS. Sukurkite Funkciją kuri priima int[] tipo kintamąjį, prasuka ciklą ir atspausdina kiekvieną skaičių.
     public static void atspausdintiMasyva(int[] masyvas) {
-        for (int skaicius: masyvas) {
+        for (int skaicius : masyvas) {
             System.out.println(skaicius);
         }
     }
@@ -84,8 +85,16 @@ public class Main {
 
     }
     // 6 UZDUOTIS. Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą ir jį gražintų. Funkcija priima tris int tipo kintamuosius, min, max ir length reikšmėms nustatyti.
-    //public static int [] genRndMas (int min, int max, int length);
 
+    public static int[] genRndIntArr(int min, int max, int len) {
+    int [] arr = new int[len];
+    for( int i = 0; i < len; i++){
+        arr[i] = min + (int) Math.round(Math.random() * (max - min));
+    }
+    return arr;
+
+}
+// 7 UZDUOTIS. Sukurkite Funkciją kuri panaudotų 6tos užduoties masyvą (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę.
 
 
 
