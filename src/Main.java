@@ -187,6 +187,8 @@ public class Main {
         System.out.println(updatedtext);
         return updatedtext;
     }
+    // 2 UZDUOTIS (SUNKESNI). Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių).
+    // Atspausdinkite simbolius stulpeliu. Jei tai skaičius apgaubkite “ [ 7 ]”. Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75].
 
 
 
