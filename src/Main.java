@@ -34,16 +34,14 @@ public class Main {
 
         // 6 uzduotis.
 
-        min= 5;
-        max= 10;
+        min = 5;
+        max = 10;
         int len = 7;
-        int [] rndIntArr= genRndIntArr(5,  10,  7);
+        int[] rndIntArr = genRndIntArr(5, 10, 7);
+        int sum = countSum(rndIntArr);
+        System.out.println("ArraySum: "+ sum);
 
-        //int[] RndMas= genRndMas(max-min) + min;
-        //System.out.println("Masyvas yra: ");
-        //for (int skaicius : RndMas) {
-        //    System.out.println(skaicius + " ");
-        //}
+        // 7 uzduotis.
 
 
     }
@@ -87,16 +85,30 @@ public class Main {
     // 6 UZDUOTIS. Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą ir jį gražintų. Funkcija priima tris int tipo kintamuosius, min, max ir length reikšmėms nustatyti.
 
     public static int[] genRndIntArr(int min, int max, int len) {
-    int [] arr = new int[len];
-    for( int i = 0; i < len; i++){
-        arr[i] = min + (int) Math.round(Math.random() * (max - min));
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = min + (int) Math.round(Math.random() * (max - min));
+        }
+        return arr;
+
     }
-    return arr;
 
-}
-// 7 UZDUOTIS. Sukurkite Funkciją kuri panaudotų 6tos užduoties masyvą (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę.
+    // 7 UZDUOTIS. Sukurkite Funkciją kuri panaudotų 6tos užduoties masyvą (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę.
+    public static int[] genRndIntArr1(int min, int max, int len) {
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = min + (int) Math.round(Math.random() * (max - min));
+        }
+        return arr;
+    }
+        public static int countSum ( int[] array){
+            int sum = 0;
+            for (int number : array) {
+                sum += number;
+            }
+            return sum;
+        }
+        // 8 UZDUOTIS.
 
 
-
-
-}
+    }
