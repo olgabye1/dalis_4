@@ -32,16 +32,31 @@ public class Main {
         int randomIntSkaicius = randomInt(min, max);
         System.out.println("Atsitiktinis skaicius " + randomIntSkaicius);
 
-        // 6 uzduotis.
+        // 6 -8 uzduotis.
 
         min = 5;
         max = 10;
         int len = 7;
         int[] rndIntArr = genRndIntArr(5, 10, 7);
         int sum = countSum(rndIntArr);
-        System.out.println("ArraySum: "+ sum);
+        System.out.println("ArraySum: " + sum);
+        int[] array = genRndIntArr2(5, 10, 7);
+        double ave = countAve(rndIntArr);
+        System.out.println("Average of array: " + ave);
 
-        // 7 uzduotis.
+        // 9 uzduotis.
+        int lines = 3;
+        int columns = 5;
+        printrectangle(lines, columns);
+
+        // 10, 11, 1 uzduotis.
+        String text = "Today is a very beautiful day";
+        countLettersAndSpaces(text);
+        String coded = codetext(text);
+
+        System.out.println("Primary text is " + text);
+        System.out.println("Coded text is " + coded);
+        printText(text);
 
 
     }
@@ -68,6 +83,7 @@ public class Main {
     }
 
     // 4 UZDUOTIS. Sukurkite Funkciją kuri priima int[] tipo kintamąjį, prasuka ciklą ir atspausdina kiekvieną skaičių.
+
     public static void atspausdintiMasyva(int[] masyvas) {
         for (int skaicius : masyvas) {
             System.out.println(skaicius);
@@ -101,14 +117,77 @@ public class Main {
         }
         return arr;
     }
-        public static int countSum ( int[] array){
-            int sum = 0;
-            for (int number : array) {
-                sum += number;
-            }
-            return sum;
+
+    public static int countSum(int[] array) {
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
         }
-        // 8 UZDUOTIS.
-
-
+        return sum;
     }
+
+    // 8 UZDUOTIS.Sukurkite Funkciją kuri priimtų 6tos užduoties masyvą ir gražintų jos skaičių vidurkį (double).
+    public static int[] genRndIntArr2(int min, int max, int len) {
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = min + (int) Math.round(Math.random() * (max - min));
+        }
+        return arr;
+    }
+
+    public static double countAve(int[] array) {
+        if (array.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
+        }
+
+        return (double) sum / array.length;
+    }
+
+    // 9 UZDUOTIS.Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį užpildytą žvaigždutėmis. Pirmas int - išoriniam ciklui, antras vidiniam.
+    public static void printrectangle(int lines, int columns) {
+        for (int i = 0; i < lines; i++) {
+            for (int i1 = 0; i1 < columns; i1++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    //10 UZDUOTIS. Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį ir atspausdintų kiek jame yra raidžių ir tarpų. Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį).
+    public static void countLettersAndSpaces(String text) {
+        int lettersCount = 0;
+        int spacesCount = 0;
+        for (char symbol : text.toCharArray()) {
+            if (Character.isLetter(symbol)) {
+                lettersCount++;
+            } else if (Character.isWhitespace(symbol)) {
+                spacesCount++;
+            }
+        }
+        System.out.println("The count of letters: " + lettersCount);
+        System.out.println("The count of spaces: " + spacesCount);
+    }
+
+    // 11 UZDUOTIS. Sukurkite Funkciją kuri priimtų sakinį, jį užkoduotų ir grąžintų. Kodavimas - sakinį apsukame iš kitos pusės. Pvz “Naglis” turi gautis “silgaN”.
+    public static String codetext(String text) {
+        StringBuilder codedtext = new StringBuilder();
+        for (int i = text.length() - 1; i >= 0; i--) {
+            codedtext.append(text.charAt(i));
+        }
+        return codedtext.toString();
+    }
+
+    // 1 UZDUOTIS(SUNKESNI). Parašykite funkciją, kurios argumentas būtų tekstas, kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale. PVZ (---labas---)
+    public static String printText(String text) {
+        String updatedtext = "..." + text + "...";
+        System.out.println(updatedtext);
+        return updatedtext;
+    }
+
+
+
+}
