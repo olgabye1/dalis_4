@@ -58,6 +58,17 @@ public class Main {
         System.out.println("Coded text is " + coded);
         printText(text);
 
+        // 2 uzduotis.
+
+        //String String1= "a1b2c3d4e5";
+        //System.out.println(String1);
+        //System.out.print(String1);
+
+        // 3 uzduotis.
+        int number = 16;
+        int division= countDivision(number);
+        System.out.println("Number " + number +" can be divided "+ division + " times");
+
 
     }
 
@@ -187,8 +198,26 @@ public class Main {
         System.out.println(updatedtext);
         return updatedtext;
     }
+
+
+    // 3 UZDUOTIS. Parašykite funkciją, kuri skaičiuotų, ir gražintų iš kiek sveikų skaičių jos argumentas dalijasi be liekanos (išskyrus vienetą ir patį save).
+    public static int countDivision (int number) {
+        int division= 0;
+        for (int divisor=2; divisor < number; divisor++) {
+            if (number % divisor ==0) {
+                division++;
+            }
+        }
+        return division;
+    }
     // 2 UZDUOTIS (SUNKESNI). Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių).
     // Atspausdinkite simbolius stulpeliu. Jei tai skaičius apgaubkite “ [ 7 ]”. Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75].
+    //public static String genRandomString1 (String randomString1); {
+      //  String String1 = new String();
+      //  System.out.print(String1);
+
+   // }
+
 
 
 
